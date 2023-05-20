@@ -8,12 +8,8 @@
                 i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/cd704ade.js","daovoice")</script>
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="谷粒学院知识点, 花溪悠悠の空間へようこそ">
-    <meta name="description" content="课程课程添加
-EasyExcel为什么快？
-
-采用基于模型的方式读写 Excel 文件，避免了大量的硬盘 I&amp;#x2F;O 操作，减少了读写 Excel 文件的时间和资源消耗。
-使用了基于 NIO 的读写方式，可以利用 Java NIO 的">
+    <meta name="keywords" content="Online Edu, 花溪悠悠の空間へようこそ">
+    <meta name="description" content="尚硅谷的谷粒学院项目的完善改进">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -25,7 +21,7 @@ EasyExcel为什么快？
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>谷粒学院知识点 | 花溪悠悠の空間へようこそ</title>
+    <title>Online Edu | 花溪悠悠の空間へようこそ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -348,7 +344,7 @@ EasyExcel为什么快？
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">谷粒学院知识点</h1>
+                    <h1 class="description center-align post-title">Online Edu</h1>
                 </div>
             </div>
         </div>
@@ -370,12 +366,25 @@ EasyExcel为什么快？
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Program/" class="post-category">
+                                Program
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -391,25 +400,30 @@ EasyExcel为什么快？
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-09
+                    2023-05-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    676
+                    930
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
                 
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
@@ -490,6 +504,28 @@ EasyExcel为什么快？
 <p>协议、ip地址、端口有不同资源文法访问</p>
 <p>使用crossorigin注解</p>
 <p>gateway网关</p>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h1 id="从MySQL向redis添加数据"><a href="#从MySQL向redis添加数据" class="headerlink" title="从MySQL向redis添加数据"></a>从MySQL向redis添加数据</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span>v<span class="token punctuation">,</span>score<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>k是zset的名字，v是值，score是得分</p>
+<blockquote>
+<p> 可以把k理解为zset的名字，v是这个zset的key，score是对应的value</p>
+</blockquote>
+<h1 id="改变value的score"><a href="#改变value的score" class="headerlink" title="改变value的score"></a>改变value的score</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">incrementScore</span><span class="token punctuation">(</span>zset_name<span class="token punctuation">,</span> value<span class="token punctuation">,</span> score<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>第一个参数是zset的名字，第二个参数是对应的value的值，第三个参数是score的增量</p>
+<h1 id="获得排名"><a href="#获得排名" class="headerlink" title="获得排名"></a>获得排名</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ZSetOperations<span class="token punctuation">.</span>TypedTuple</span><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span><span class="token punctuation">></span></span> set <span class="token operator">=</span> 																		redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rangeWithScores</span><span class="token punctuation">(</span>zset_name<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">ZSetOperations<span class="token punctuation">.</span>TypedTuple</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> tuple <span class="token operator">:</span> set<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"value:"</span> <span class="token operator">+</span> tuple<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">", score:"</span> <span class="token operator">+</span> tuple<span class="token punctuation">.</span><span class="token function">getScore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>set集合用来存放键值对结果，<code>redisTemplate.opsForZSet().rangeWithScores</code>获取排序结果（默认升序），第一个参数为zset的名字，第二个参数表示从第几名开始获取，第三个参数表示到第几名结束（（0，-1）表示获取全部value）</p>
+<h1 id="Zset并集"><a href="#Zset并集" class="headerlink" title="Zset并集"></a>Zset并集</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unionAndStore</span><span class="token punctuation">(</span> zset_name01<span class="token punctuation">,</span>zset_name02<span class="token punctuation">,</span>zset_name03<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>将zset_name02合并到zset_name01,相同元素相加，其余添加</p>
+<h1 id="删除Zset"><a href="#删除Zset" class="headerlink" title="删除Zset"></a>删除Zset</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">removeRange</span><span class="token punctuation">(</span>zset_name<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>删除zset_name的value，第二、三参数表示从第几位删除到第几位，((0,-1))表示全部删除</p>
 
                 
             </div>
@@ -503,7 +539,11 @@ EasyExcel为什么快？
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -874,32 +914,44 @@ EasyExcel为什么快？
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/05/04/springboot-redis-shi-xian-pai-xing-bang/">
+                <a href="/2023/05/05/she-ji-mo-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="SpringBoot+Redis实现排行榜">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="设计模式">
                         
-                        <span class="card-title">SpringBoot+Redis实现排行榜</span>
+                        <span class="card-title">设计模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            还在慢慢补充，种类太多了...
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-05
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            花溪悠悠
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-category">
+                                    后端开发
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -915,15 +967,15 @@ EasyExcel为什么快？
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="面试题">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Java八股文">
                         
-                        <span class="card-title">面试题</span>
+                        <span class="card-title">Java八股文</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            关于Java面试常见的一些问题，还在收录中
                         
                     </div>
                     <div class="publish-info">
@@ -932,8 +984,12 @@ EasyExcel为什么快？
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            花溪悠悠
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -976,8 +1032,6 @@ EasyExcel为什么快？
 
 
 <!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
 
@@ -1087,6 +1141,8 @@ EasyExcel为什么快？
             
             
             
+                
+            
             
                 <span id="busuanzi_container_site_pv">
                 &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
@@ -1106,14 +1162,14 @@ EasyExcel为什么快？
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link ">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/ZyL0NG" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1045139383@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:14735515937@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -1328,6 +1384,8 @@ $(function () {
 </script>
 
     
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
