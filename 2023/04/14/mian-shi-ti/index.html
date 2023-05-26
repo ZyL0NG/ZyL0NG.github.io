@@ -380,7 +380,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-24
+                    2023-05-26
                 </div>
                 
 
@@ -1274,7 +1274,7 @@
 <li>建表考虑的问题</li>
 </ol>
 <p>数据库设计、数据类型、主键设计、索引设计、字段属性、数据库引擎、数据库安全、数据库备份与恢复</p>
-<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><ol>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><ol>
 <li><strong>事务</strong></li>
 </ol>
 <p>数据库事务（Transaction）是指一组数据库操作，这组操作被视为一个不可分割的工作单元，只有在所有操作都完成时，才会被提交到数据库中，否则会被回滚（Rollback）并撤销所有操作。</p>
@@ -1288,36 +1288,33 @@
 <p>脏读（Dirty Read）：指一个事务读取了另一个事务未提交的数据。</p>
 <p>不可重复读（Non-Repeatable Read）：指一个事务多次读取同一条记录，但在读取的过程中，这条记录被另一个事务修改了，导致读取的结果不一致。</p>
 <p>幻读（Phantom Read）：指一个事务执行了一次范围查询，但在查询的过程中，另一个事务插入了一条新的数据，导致查询的结果不一致。</p>
-<ol start="7">
+<ol start="4">
 <li><strong>不可重复读和幻读的区别</strong></li>
 </ol>
 <p>不可重复读是指在一个事务中，多次读取同一条记录，但在此期间另一个事务更新了该记录，导致两次读取的结果不一致。幻读是指在一个事务中，多次查询同一范围的记录，但在此期间另一个事务插入了一条符合查询条件的记录，导致两次查询的结果不一致。</p>
 <p>不可重复读的原因是在一个事务中多次读取同一条记录时，另一个事务可能会更新该记录。幻读的原因是在一个事务中多次查询相同的条件时，另一个事务可能会插入一条符合查询条件的记录。</p>
-<ol start="8">
+<ol start="5">
 <li><strong>事务隔离级别</strong></li>
 </ol>
 <p>读未提交、读已提交、可重复读（mysql默认级别）、串行化</p>
-<ol start="9">
+<ol start="6">
 <li><strong>MVCC</strong></li>
 </ol>
 <p><strong>作用</strong>：MVCC采用版本号或时间戳来标识数据版本，每个事务在读取数据时只读取自己开始时间之前的数据版本，而对数据的修改会创建新的数据版本。这样，即使多个事务对同一数据进行读写操作，也不会相互阻塞。而且，当一个事务要修改某个数据行时，如果该数据行已被其他事务修改，则会进行冲突检测，从而避免数据的丢失或者不一致。</p>
 <p><strong>原理</strong>：</p>
-<ol>
-<li><p>每个数据行都有版本号或时间戳</p>
-</li>
-<li><p>事务读取数据时，只会读自己开始之前可见的版本，如果该版本数据被修改就回滚事务，知道读到可见版本</p>
-</li>
-<li><p>事务修改数据时，创建新数据版本，与当前事务关联，如果已经被修改就需要冲突检测</p>
-</li>
-<li><p>某个数据版本被所有事务都看不见，则清理掉该版本</p>
-</li>
-<li><p>InnoDB 存储引擎的行锁</p>
-</li>
+<ul>
+<li>每个数据行都有版本号或时间戳</li>
+<li>事务读取数据时，只会读自己开始之前可见的版本，如果该版本数据被修改就回滚事务，直到读到可见版本</li>
+<li>事务修改数据时，创建新数据版本，与当前事务关联，如果已经被修改就需要冲突检测</li>
+<li>某个数据版本被所有事务都看不见，则清理掉该版本</li>
+</ul>
+<ol start="7">
+<li>InnoDB 存储引擎的行锁</li>
 </ol>
 <p>记录锁（Record Lock）是 InnoDB 存储引擎最基本的锁类型，用于锁定某一行数据。</p>
 <p>间隙锁（Gap Lock）用于锁定一个范围，而不是单独的某一行数据。</p>
 <p>临建锁（Next-Key Lock）是记录锁和间隙锁的结合，既可以锁定某一行数据，也可以锁定一个范围。临建锁用于解决幻读问题，同时也可以避免覆盖读和不可重复读的产生。</p>
-<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><ol start="0">
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><ol start="0">
 <li><strong>索引</strong></li>
 </ol>
 <p>索引是一种特殊的数据结构，用于在数据库中快速定位数据。</p>
@@ -1396,13 +1393,14 @@
 <p>覆盖索引是指在查询语句中，所有需要返回的字段都可以从索引中获取，而不需要再到数据表中进行查询的一种情况。</p>
 <p>使用覆盖索引的优点是可以减少查询语句的 IO 操作次数，从而提高查询效率。同时，由于不需要访问数据表，所以在查询过程中也不会发生锁的冲突，从而避免了死锁等问题的发生。</p>
 <p>要求：</p>
-<ol>
+<ul>
 <li><p>查询语句中需要返回的所有字段都被包含在索引中。</p>
 </li>
 <li><p>索引必须是一个覆盖索引，即所有需要返回的字段的值都在索引中。</p>
 </li>
-<li><p><strong>联合索引</strong></p>
-</li>
+</ul>
+<ol start="5">
+<li><strong>联合索引</strong></li>
 </ol>
 <p>联合索引是指将多个字段组合成一个索引的方式。联合索引可以提高查询效率，因为可以用于查询多个条件。</p>
 <ol start="6">
@@ -1413,7 +1411,7 @@
 <li><strong>索引失效</strong></li>
 </ol>
 <p>函数操作、使用了 NOT、!&#x3D;、&lt;&gt;、OR 操作符、索引列排序分组、模糊查询、数据类型不匹配、索引列过长、数据量小、统计信息不准确</p>
-<h3 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h3><ol>
+<h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2><ol>
 <li><strong>常见日志类型</strong></li>
 </ol>
 <p>错误日志（Error log）：记录MySQL服务器在启动、运行过程中出现的错误信息和警告信息；</p>
@@ -1443,7 +1441,7 @@
 <p>主要应用场景：主从复制</p>
 <p>刷盘时机：在 MySQL 中，事务提交时会将事务的所有更改写入 binlog 文件中，然后将其刷盘到磁盘中。</p>
 <p>重新生成：mysql停止或重启；flush logs；超过max_binlog_size</p>
-<h3 id="SQL优化"><a href="#SQL优化" class="headerlink" title="SQL优化"></a>SQL优化</h3><ol>
+<h2 id="SQL优化"><a href="#SQL优化" class="headerlink" title="SQL优化"></a>SQL优化</h2><ol>
 <li><strong>sql优化</strong></li>
 </ol>
 <p>避免使用select *</p>
@@ -1459,7 +1457,7 @@
 <p>能用where不用having</p>
 <p>避免使用否定形式</p>
 <ol start="2">
-<li>慢查询可能原因</li>
+<li><strong>慢查询可能原因</strong></li>
 </ol>
 <p>数据量过大、索引问题、锁问题、IO吞吐量小</p>
 <ol start="3">
@@ -1468,7 +1466,7 @@
 <p>使用选择性高的字段并前置（能过滤较多记录）</p>
 <p>尽量使用覆盖索引</p>
 <p>索引失效：组合索引左匹配原则、发生<strong>隐式转换</strong>、组合索引，in + order by in会阻断排序用索引、范围查询会阻断组合索引,索引涉及到范围查询的索引字段要放在组合索引的最后面、前<strong>模糊匹配</strong>导致索引失效、<strong>or查询</strong>，查询条件部分有索引，部分无索引，导致索引失效、查询条件使用了<strong>函数运算</strong>、四则运算等、使用了!&#x3D;、not in、选择性过低、asc和desc混用</p>
-<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h3 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h3><ol>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><ol>
 <li><strong>本地缓存</strong></li>
 </ol>
 <p>Ehcache 、Guava Cache 、Spring Cache、Caffeine（常用）</p>
@@ -1483,8 +1481,8 @@
 </ol>
 <p>本地缓存（速度快）+分布式缓存</p>
 <p>使用场景：数据稳定、访问量大</p>
-<h3 id="Redis基础"><a href="#Redis基础" class="headerlink" title="Redis基础"></a>Redis基础</h3><ol>
-<li><strong>redis的功能</strong></li>
+<h2 id="Redis基础"><a href="#Redis基础" class="headerlink" title="Redis基础"></a>Redis基础</h2><ol>
+<li><strong>Redis的功能</strong></li>
 </ol>
 <p>键值存储，内存缓存，分布式锁，限流，消息队列（5.0新增数据结构stream，可以做轻量级）</p>
 <ol start="2">
@@ -1512,7 +1510,7 @@
 <td></td>
 </tr>
 <tr>
-<td>redis</td>
+<td>Redis</td>
 <td>字符串、哈希表、列表、集合、有序集合</td>
 <td>RDB\AOF</td>
 <td>单线程</td>
@@ -1520,7 +1518,7 @@
 </tr>
 </tbody></table>
 <ol start="4">
-<li>支持的数据类型</li>
+<li><strong>支持的数据类型</strong></li>
 </ol>
 <table>
 <thead>
@@ -1571,23 +1569,23 @@
 <td>sort set</td>
 </tr>
 </tbody></table>
-<ol start="4">
-<li>为什么速度快？</li>
+<ol start="5">
+<li><strong>为什么速度快？</strong></li>
 </ol>
 <p>基于内存，内存访问速度远快于磁盘；</p>
 <p>单线程+IO多路复用</p>
 <p>数据结构优化</p>
-<h3 id="redis应用"><a href="#redis应用" class="headerlink" title="redis应用"></a>redis应用</h3><ol>
-<li><strong>redis做统计网站的uv</strong></li>
+<h2 id="Redis应用"><a href="#Redis应用" class="headerlink" title="Redis应用"></a>Redis应用</h2><ol>
+<li><strong>Redis做统计网站的uv</strong></li>
 </ol>
 <p>使用HyperLogLog，HyperLogLog是一种基数（cardinality）估算算法，可以用来统计大数据集合的不同元素个数，而不需要将所有元素都存储在内存中。它的优点是占用内存小，计算速度快，适合处理大规模的数据集。</p>
 <p>可以通过将每个用户的IP地址作为HyperLogLog的元素进行去重计数，从而得到网站的UV。有一定误差。</p>
 <ol start="2">
-<li><strong>redis做排行版</strong></li>
+<li><strong>Redis做排行榜</strong></li>
 </ol>
 <p>使用有序集合（sorted set）数据结构来存储每个用户的分数和排名信息。</p>
 <p>有序集合是一种有序的键值对集合，其中每个键关联着一个分数值，可以根据分数值对集合中的键进行排序。在排行榜中，可以将每个用户的得分作为有序集合中的分数，将用户ID作为有序集合中的键，然后根据分数值对有序集合进行排序，得到用户的排名信息。</p>
-<h3 id="redis线程模式"><a href="#redis线程模式" class="headerlink" title="redis线程模式"></a>redis线程模式</h3><ol>
+<h2 id="Redis线程模式"><a href="#Redis线程模式" class="headerlink" title="Redis线程模式"></a>Redis线程模式</h2><ol>
 <li><strong>单线程模式</strong></li>
 </ol>
 <p>优点：简短高效、确保数据一致、支持原子性操作</p>
@@ -1605,7 +1603,7 @@
 <li>为什么又用多线程？</li>
 </ol>
 <p>提高网络IO性能只应用在了网络数据的读写上</p>
-<h3 id="redis内存管理"><a href="#redis内存管理" class="headerlink" title="redis内存管理"></a>redis内存管理</h3><ol>
+<h2 id="Redis内存管理"><a href="#Redis内存管理" class="headerlink" title="Redis内存管理"></a>Redis内存管理</h2><ol>
 <li><strong>过期数据处理</strong></li>
 </ol>
 <p>设置缓存数据过期时间、设置过期字典。</p>
@@ -1627,7 +1625,7 @@
 <p>内存碎片是指空闲内存块之间存在无法利用的小块空闲内存的现象。</p>
 <p>原因：频繁的内存分配和释放。内存对齐（整块分配）。大量缓存数据的更新。</p>
 <p>避免：减少内存分配和释放的次数；合理设置内存对齐参数；定期清理内存碎片</p>
-<h3 id="redis持久化机制"><a href="#redis持久化机制" class="headerlink" title="redis持久化机制"></a>redis持久化机制</h3><ol>
+<h2 id="Redis持久化机制"><a href="#Redis持久化机制" class="headerlink" title="Redis持久化机制"></a>Redis持久化机制</h2><ol>
 <li><strong>RDB持久化</strong></li>
 </ol>
 <p>RDB持久化是将Redis的数据集以快照的方式写入磁盘。当Redis需要保存数据时，它会将当前数据集写入一个RDB文件中。RDB文件包含了Redis在某个时间点上的数据快照，可以通过加载RDB文件来恢复数据。RDB持久化适用于数据集较大、对数据完整性要求不高的场景。</p>
@@ -1638,8 +1636,8 @@
 <ol start="3">
 <li><strong>RDB&amp;AOF混合持久化</strong></li>
 </ol>
-<h3 id="redis事务"><a href="#redis事务" class="headerlink" title="redis事务"></a>redis事务</h3><ol>
-<li><strong>redis事务的缺点</strong></li>
+<h2 id="Redis事务"><a href="#Redis事务" class="headerlink" title="Redis事务"></a>Redis事务</h2><ol>
+<li><strong>Redis事务的缺点</strong></li>
 </ol>
 <p>原子性问题：Redis事务并不是严格的原子性操作，即使在一个事务中发生错误，已经执行的命令也不会回滚。</p>
 <p>隔离性问题：Redis事务也不是严格的隔离性操作。在多个客户端同时执行事务时，如果它们修改了相同的键，可能会发生竞态条件（race condition），导致最终结果出现错误。</p>
@@ -1649,7 +1647,7 @@
 </ol>
 <p>lua脚本可以实现事务和原子性操作，可以保证一些复杂的操作的数据一致性和原子性。</p>
 <p>通过watch机制解决原子性问题、使用Redis的乐观锁机制解决隔离性问题</p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ol>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
 <li><strong>缓存穿透、缓存击穿</strong></li>
 </ol>
 <p>缓存穿透通常指在缓存和存储层中都不存在数据，导致每次请求都要查询存储层。如果数据库中存在数据，但缓存中不存在，这种情况通常被称为缓存击穿。</p>
@@ -1658,9 +1656,9 @@
 <p>布隆过滤器：在缓存层上使用布隆过滤器，过滤掉一些明显不存在的数据请求，避免请求到存储层。</p>
 <p>数据预热：在应用启动时，将热门数据预先加载到缓存中，避免请求到存储层。</p>
 <p>设置缓存时间：对于不太可能存在的数据，可以设置一个较短的缓存时间，从而降低缓存穿透的概率。</p>
-<p><em>布隆过滤器：布隆过滤器是一种概率型数据结构，用于判断一个元素是否可能存在于一个集合中。它可以快速判断一个元素是否存在于一个大型集合中，而无需对整个集合进行遍历和比较。</em></p>
-<p><em>布隆过滤器基于位数组和多个哈希函数构成。当一个元素被加入集合时，将会被多个哈希函数映射成多个位数组上的位置，并将这些位置标记为1。当判断一个元素是否存在于集合时，将该元素经过哈希函数映射到多个位数组上，如果所有位置的值都为1，则认为该元素可能存在于集合中；如果有任何一个位置的值为0，则认为该元素一定不存在于集合中。</em></p>
-<p><em>由于布隆过滤器存在一定的误判率，因此它适合于那些可以容忍一定误判率的场景，如缓存穿透的解决方案等。</em></p>
+<p>布隆过滤器：布隆过滤器是一种概率型数据结构，用于判断一个元素是否可能存在于一个集合中。它可以快速判断一个元素是否存在于一个大型集合中，而无需对整个集合进行遍历和比较。</p>
+<p>布隆过滤器基于位数组和多个哈希函数构成。当一个元素被加入集合时，将会被多个哈希函数映射成多个位数组上的位置，并将这些位置标记为1。当判断一个元素是否存在于集合时，将该元素经过哈希函数映射到多个位数组上，如果所有位置的值都为1，则认为该元素可能存在于集合中；如果有任何一个位置的值为0，则认为该元素一定不存在于集合中。</p>
+<p>由于布隆过滤器存在一定的误判率，因此它适合于那些可以容忍一定误判率的场景，如缓存穿透的解决方案等。</p>
 <ol start="2">
 <li><strong>缓存雪崩</strong></li>
 </ol>
@@ -1690,15 +1688,17 @@
 <tr>
 <td>Write-Back（回写缓存）</td>
 <td></td>
-<td>先写缓存标记脏数据，等待进程写入1数据库</td>
+<td>先写缓存标记脏数据，等待进程写入数据库</td>
 </tr>
 </tbody></table>
-<h3 id="redis集群"><a href="#redis集群" class="headerlink" title="redis集群"></a>redis集群</h3><ol>
+<h2 id="Redis集群"><a href="#Redis集群" class="headerlink" title="Redis集群"></a>Redis集群</h2><ol>
 <li><strong>如何保证高可用</strong></li>
 </ol>
 <p>主从复制：master主节点负责处理写请求，slave从节点负责处理读请求。master宕机，选择一台slave作为master将主节点数据复制到从节点，保障高可用，实现读写分离提高并发量</p>
-<p>sentinel哨兵</p>
-<p>sentinel可以监控redis节点运行状态并自动完成故障转移</p>
+<ol start="2">
+<li>sentinel哨兵</li>
+</ol>
+<p>sentinel可以监控Redis节点运行状态并自动完成故障转移</p>
 <p>分布式系统：多个sentinel节点投票决定master节点是否不可用，sentienl是高可用</p>
 <p>运行方式：sentinel节点每秒钟向master和slave发送ping，超时未回复则认为线下。slave下线不关心，如果master超时回复，则多个sentinel进行核实。一旦下线，则会选择一个slave作为新的master，选择slave的规则：</p>
 <ul>
@@ -1709,22 +1709,24 @@
 <li><p>运行id：选择较小的</p>
 </li>
 </ul>
-<p>Redis Cluster</p>
+<ol start="3">
+<li>Redis Cluster</li>
+</ol>
 <p>使用原因：缓存数据量大、并发量高</p>
 <p>定义：部署多台Redis主节点，同时提供读写服务，可以为每一个master再配置slave</p>
 <p>优点：横向扩充动态扩容缩容（直接添加或者删除节点）</p>
 <p>​			具备主从复制、故障转移（内置sentinel机制）</p>
 <p>基本要求：3个master、个slave</p>
 <p>分片：哈希槽分区每个键值对属于一个哈希槽，共有16384个哈希槽，自动分配哈希槽到各个节点</p>
-<ol start="2">
+<ol start="4">
 <li><strong>Redis Cluster如何实现各节点数据一致性</strong></li>
 </ol>
 <p>Redis Cluster使用Gossip协议来保持集群节点之间的通信和状态同步。每个节点定期地向其他节点发送信息，包括自己的状态、所知道的其他节点信息等。当节点接收到其他节点的信息时，它会将这些信息与自己的信息进行比对，以确保数据的一致性。</p>
-<ol start="3">
+<ol start="5">
 <li><strong>虚拟槽分区</strong></li>
 </ol>
 <p>Redis Cluster中采用了虚拟槽分区的方式来实现数据的分片和负载均衡。具体来说，Redis Cluster将整个数据集划分为16384个槽，每个节点可以负责多个槽。当一个节点加入或离开集群时，它会和其他节点交换槽信息，确保每个节点都知道哪些槽分配给了哪个节点。当客户端对集群进行读写操作时，Redis会根据Key所属的槽位，将请求转发到负责该槽位的节点上进行处理。这样，就实现了数据的分片和负载均衡。同时，为了确保数据的高可用性，每个槽位都会有多个副本（通常是3个），即使某个节点宕机，数据仍然可以通过其它副本进行读写。</p>
-<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><ol>
+<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><ol>
 <li>命令执行步骤</li>
 </ol>
 <p>发送命令、命令排队、命令执行、返回结果</p>
@@ -1764,7 +1766,7 @@
 </ol>
 <p>RowBounds、PageHelper（推荐）</p>
 <p>原理：获取分页参数、拦截查询Sql语句，根据参数添加查询条件LIMIT、封装对象并返回</p>
-<h3 id="mybatis-plus"><a href="#mybatis-plus" class="headerlink" title="mybatis-plus"></a>mybatis-plus</h3><ol>
+<h1 id="MyBatis-plus"><a href="#MyBatis-plus" class="headerlink" title="MyBatis-plus"></a>MyBatis-plus</h1><ol>
 <li><strong>注解</strong></li>
 </ol>
 <table>
@@ -1799,14 +1801,14 @@
 <ol start="2">
 <li><strong>主键生成策略</strong></li>
 </ol>
-<p>自动增长、uuid（排序困难）、redis生成（固定步长增加）、雪花算法</p>
+<p>自动增长、uuid（排序困难）、Redis生成（固定步长增加）、雪花算法</p>
 <p>雪花算法：时间戳+数据中心ID+机器ID+序列号</p>
 <ol start="3">
 <li>插件</li>
 </ol>
 <p>分页插件</p>
 <p>乐观锁：基于版本号机制</p>
-<h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h3 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h3><p><strong>IoC（Inversion of Control:控制反转）</strong> 是一种设计思想，而不是一个具体的技术实现。IoC 的思想就是将原本在程序中手动创建对象的控制权，交由 Spring 框架来管理。</p>
+<h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h2 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h2><p><strong>IoC（Inversion of Control:控制反转）</strong> 是一种设计思想，而不是一个具体的技术实现。IoC 的思想就是将原本在程序中手动创建对象的控制权，交由 Spring 框架来管理。</p>
 <ul>
 <li><strong>控制</strong> ：指的是对象创建（实例化、管理）的权力</li>
 <li><strong>反转</strong> ：控制权交给外部环境（Spring 框架、IoC 容器）</li>
