@@ -49,6 +49,8 @@
 
 
     
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
 
 
 
@@ -378,21 +380,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-20
+                    2023-05-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    19.1k
+                    19.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    67 分
+                    68 分
                 </div>
                 
 
@@ -415,7 +417,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Java-基础"><a href="#Java-基础" class="headerlink" title="Java 基础"></a>Java 基础</h1><ol>
+                <h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><h2 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h2><ol>
 <li><strong>基本数据类型</strong></li>
 </ol>
 <table>
@@ -493,7 +495,9 @@
 <li><strong>NPE问题</strong></li>
 </ol>
 <p>数据库调用、三目运算符</p>
-<p><code>String str = someCondition ? null : &quot;Hello&quot;; int length = str.length();</code></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//在空引用上使用.length()导致报错</span>
+<span class="token class-name">String</span> str <span class="token operator">=</span> someCondition <span class="token operator">?</span> <span class="token keyword">null</span> <span class="token operator">:</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span> <span class="token keyword">int</span> length <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <ol start="6">
 <li><strong>string stringbuffer stringbuilder区别</strong></li>
 </ol>
@@ -501,77 +505,89 @@
 <thead>
 <tr>
 <th align="center"></th>
-<th>长度</th>
-<th></th>
-<th>性能</th>
+<th align="center">长度</th>
+<th align="center">线程安全</th>
+<th align="center">性能</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="center">string</td>
-<td>不可变</td>
-<td>线程安全</td>
-<td>最低</td>
+<td align="center">不可变</td>
+<td align="center">线程安全(final)</td>
+<td align="center">最低</td>
 </tr>
 <tr>
 <td align="center">stringbuffer</td>
-<td>可变</td>
-<td>线程安全synchronized</td>
-<td>居中</td>
+<td align="center">可变</td>
+<td align="center">线程安全(synchronized)</td>
+<td align="center">居中</td>
 </tr>
 <tr>
 <td align="center">stringbuilder</td>
-<td>可变</td>
-<td>不安全</td>
-<td>最高</td>
+<td align="center">可变</td>
+<td align="center">不安全</td>
+<td align="center">最高</td>
 </tr>
 </tbody></table>
-<ol start="5">
+<ol start="7">
 <li><strong>重写和重载</strong></li>
 </ol>
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
-<th>参数，返回列表</th>
-<th></th>
-<th></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center">参数，返回列表</th>
+<th align="center"></th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody><tr>
-<td>重写</td>
-<td>子类重写父类方法</td>
-<td>相同</td>
-<td>运行</td>
-<td>动态绑定</td>
+<td align="center">重写</td>
+<td align="center">子类重写父类方法</td>
+<td align="center">相同</td>
+<td align="center">运行</td>
+<td align="center">动态绑定</td>
 </tr>
 <tr>
-<td>重载</td>
-<td>一个类中多个方法</td>
-<td>不同</td>
-<td>编译</td>
-<td>前期绑定</td>
+<td align="center">重载</td>
+<td align="center">一个类中多个方法</td>
+<td align="center">不同</td>
+<td align="center">编译</td>
+<td align="center">前期绑定</td>
 </tr>
 </tbody></table>
-<ol start="7">
+<ol start="8">
 <li><strong>&#x3D;&#x3D;和equal的区别</strong></li>
 </ol>
-<p>&#x3D;&#x3D;用于比较两个对象的引用是否相等，equals()用于比较两个对象的内容是否相等。equals要重写否则和&#x3D;&#x3D;一样</p>
-<ol start="8">
-<li><table>
+<p>&#x3D;&#x3D;用于比较两个对象的引用（地址）是否相等，equals()用于比较两个对象的内容是否相等。equals要重写否则和&#x3D;&#x3D;一样</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> str1 <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> str2 <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> str3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str1 <span class="token operator">==</span> str2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出 true，因为str1和str2引用同一个字符串对象</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str1<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>str2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出 true，因为str1和str2的内容相等</span>
+
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str1 <span class="token operator">==</span> str3<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出 false，因为str1和str3引用不同的字符串对象</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str1<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>str3<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出 true，因为str1和str3的内容相等</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="9">
+<li><strong>内部类</strong></li>
+</ol>
+<table>
 <thead>
 <tr>
 <th></th>
-<th>是否可以访问外部类成员变量和方法</th>
-<th>是否可以被外部访问</th>
+<th>可以访问</th>
+<th>可以访问</th>
 <th></th>
 <th></th>
 </tr>
 </thead>
 <tbody><tr>
 <td>成员内部类</td>
-<td>可以访问</td>
-<td>可以访问</td>
+<td>是否可以访问外部类成员变量和方法</td>
+<td>是否可以被外部访问</td>
 <td></td>
 <td></td>
 </tr>
@@ -597,9 +613,8 @@
 <td></td>
 </tr>
 </tbody></table>
-</li>
-<li><p><strong>接口和抽象类</strong></p>
-</li>
+<ol start="10">
+<li><strong>接口和抽象类</strong></li>
 </ol>
 <p>抽象类是一种特殊的类，它不能被实例化，而是用来被继承的，通过使用关键字<code>abstract</code>来修饰。抽象类可以包含抽象方法和非抽象方法，抽象方法必须被子类实现，而非抽象方法可以被子类继承或者覆盖。而接口是一种特殊的类，它只包含方法的定义，没有方法的实现，通过使用关键字<code>interface</code>来修饰。实现接口的类必须实现接口中定义的所有方法。</p>
 <p>一个类只能继承一个抽象类，但是一个类可以实现多个接口。</p>
@@ -607,11 +622,12 @@
 <p>抽象类可以包含非抽象方法，这些方法可以被子类继承或者覆盖。而接口中只能包含抽象方法，这些方法必须被实现。</p>
 <p>抽象类可以有成员变量，而接口中只能包含常量。</p>
 <ol start="10">
-<li>深拷贝和浅拷贝</li>
+<li><strong>深拷贝和浅拷贝</strong></li>
 </ol>
 <p>浅拷贝只是复制了对象的引用，而没有复制对象本身。深拷贝会递归复制一个对象及其所有的成员变量，确保新的对象与原对象没有任何关联。</p>
 <p>深拷贝实现方法：重写对象的 clone() 方法。使用序列化和反序列化实现深拷贝。使用第三方库进行深拷贝。</p>
-<h3 id="注解-反射"><a href="#注解-反射" class="headerlink" title="注解 反射"></a>注解 反射</h3><ol>
+<hr>
+<h2 id="注解-反射"><a href="#注解-反射" class="headerlink" title="注解 反射"></a>注解 反射</h2><ol>
 <li><strong>反射</strong></li>
 </ol>
 <p>应用场景：动态加载类和创建对象、动态获取和操作类的成员、动态扩展应用程序、动态代理</p>
@@ -624,7 +640,7 @@
 <li>获取元数据：元数据包括注解中定义的各种属性，包括默认值、数据类型、是否可重复等。Java通过反射机制获取注解中的元数据，并根据元数据对注解进行解析。</li>
 <li>执行注解：Java会根据注解中的元数据执行相应的操作。例如，如果注解中定义了某个属性为A，那么Java会根据属性A的值执行相应的操作。</li>
 </ul>
-<h3 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h3><ol>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><ol>
 <li><strong>泛型</strong></li>
 </ol>
 <p>使用泛型的好处在于可以在编译期间检查类型的一致性和安全性，避免在运行时出现类型转换错误和异常，提高代码的可读性和可维护性。同时，泛型还可以使代码更加通用和灵活，能够适应各种类型的数据和对象。</p>
@@ -647,7 +663,7 @@
 <p>上界通配符：上界通配符使用 <code>extends</code> 关键字定义，它表示类型参数必须是指定类型的子类或本身。</p>
 <p>上边界通配符：上边界通配符使用 <code>extends</code> 关键字定义，它表示类型参数必须是指定类型的子类或本身。</p>
 <p>下边界通配符：下边界通配符使用 <code>super</code> 关键字定义，它表示类型参数必须是指定类型的超类或本身。</p>
-<h3 id="string类"><a href="#string类" class="headerlink" title="string类"></a>string类</h3><h3 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h3><ol>
+<h2 id="string类"><a href="#string类" class="headerlink" title="string类"></a>string类</h2><h2 id="IO流"><a href="#IO流" class="headerlink" title="IO流"></a>IO流</h2><ol>
 <li><strong>字符流和字节流</strong></li>
 </ol>
 <p>字节流操作的是字节（byte）数据，可以处理所有类型的数据，包括文本、图像、音频等二进制数据。字节流主要用于读写二进制文件（如图像、音频文件）和网络编程中传输二进制数据。</p>
@@ -661,13 +677,13 @@
 <p>观察者模式：输入流或输出流发生某些事件（如数据可用或到达流的末尾）时，可以使用观察者模式通知相应的观察者对象进行处理。</p>
 <p>适配器模式：InputStreamReader和OutputStreamWriter等转换流就是使用适配器模式实现的。适配器模式可以将一个类的接口转换成客户端需要的另一种接口。</p>
 <ol start="3">
-<li>体系</li>
+<li><strong>体系</strong></li>
 </ol>
 <p>字节流：输入都是 ×××InputStream</p>
 <p>​				输出都是 ×××OutPutStream</p>
 <p>字符流：输入都是 ×××Reader</p>
 <p>​				输出都是 ×××Writer</p>
-<h1 id="Java-集合"><a href="#Java-集合" class="headerlink" title="Java 集合"></a>Java 集合</h1><ol start="0">
+<h2 id="Java-集合"><a href="#Java-集合" class="headerlink" title="Java 集合"></a>Java 集合</h2><ol start="0">
 <li><strong>list set map</strong></li>
 </ol>
 <table>
@@ -713,34 +729,34 @@
 <tr>
 <th></th>
 <th>底层实现</th>
-<th></th>
-<th></th>
-<th></th>
+<th align="center">线程安全</th>
+<th align="center">复杂度</th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody><tr>
 <td>ArrayList（推荐）</td>
 <td>Object数组</td>
-<td>线程不安全</td>
-<td>数组插入删除复杂度、随机访问</td>
-<td>预留空间</td>
+<td align="center">线程不安全</td>
+<td align="center">数组插入删除复杂度、随机访问</td>
+<td align="center">预留空间</td>
 </tr>
 <tr>
 <td>Vector</td>
 <td>Object数组</td>
-<td>线程安全</td>
-<td>数组插入删除复杂度</td>
-<td></td>
+<td align="center">线程安全</td>
+<td align="center">数组插入删除复杂度</td>
+<td align="center"></td>
 </tr>
 <tr>
 <td>LinkedList</td>
 <td>双向列表</td>
-<td>线程不安全</td>
-<td>链表插入删除复杂度</td>
-<td>每个元素占更大空间</td>
+<td align="center">线程不安全</td>
+<td align="center">链表插入删除复杂度</td>
+<td align="center">每个元素占更大空间</td>
 </tr>
 </tbody></table>
-<!--ArrayList扩容机制：开始默认设置为0，增加第一个元素变为10，之后超限则扩容为1.5倍-->
+<!--ArrayList扩容机制：开始默认设置为0，增加第一个元素变为10，之后超限则扩容为1.5倍，扩容时创建新内存，然后复制-->
 
 <p><em><strong>Queue</strong></em>和<em><strong>Deque</strong></em></p>
 <table>
@@ -781,7 +797,7 @@
 <tr>
 <th></th>
 <th>底层实现</th>
-<th></th>
+<th>线程安全</th>
 <th></th>
 <th></th>
 </tr>
@@ -841,13 +857,6 @@
 <td></td>
 </tr>
 <tr>
-<td>LinkedHashMap</td>
-<td>HashMap</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>TreeSet</td>
 <td>红黑树</td>
 <td></td>
@@ -856,7 +865,8 @@
 </tr>
 </tbody></table>
 <ol start="2">
-<li><p><strong>ArrayList Vector的区别</strong></p>
+<li><strong>ArrayList Vector的区别</strong></li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -882,8 +892,9 @@
 <td>2</td>
 </tr>
 </tbody></table>
-</li>
-<li><p><strong>ArrayList LinkedList的区别</strong></p>
+<ol start="3">
+<li><strong>ArrayList LinkedList的区别</strong></li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -909,8 +920,9 @@
 <td>记录相邻节点</td>
 </tr>
 </tbody></table>
-</li>
-<li><p><strong>Queue和Dueue</strong></p>
+<ol start="4">
+<li><strong>Queue和Dueue</strong></li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -936,8 +948,9 @@
 <td></td>
 </tr>
 </tbody></table>
-</li>
-<li><p><strong>ArrayDeque和LinkedList</strong></p>
+<ol start="5">
+<li><strong>ArrayDeque和LinkedList</strong></li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -963,14 +976,14 @@
 <td></td>
 </tr>
 </tbody></table>
-</li>
-<li><p><strong>ConcurrentHashMap线程安全实现方法</strong></p>
-</li>
+<ol start="6">
+<li><strong>ConcurrentHashMap线程安全实现方法</strong></li>
 </ol>
 <p>ConcurrentHashMap的线程安全是通过分段锁机制来实现的。它将整个HashMap分成了多个Segment（段），每个Segment都是一个独立的哈希表，各自管理其中的元素。每个Segment都有一个独立的锁，对于每个操作，只需要锁定对应的Segment，而不是整个HashMap，这样可以减小锁的粒度，提高并发性能。</p>
 <p>在ConcurrentHashMap中，每个Segment都是由一个HashEntry数组和一个链表组成的。当需要添加元素时，首先根据元素的hash值计算出应该放入哪个Segment中，然后在该Segment对应的HashEntry数组中查找是否已经存在该元素的key，如果存在，则更新该元素的value，如果不存在，则将该元素插入到链表中。在插入元素的过程中，需要先获取该Segment的锁，然后再进行插入操作。在查询元素时，也需要获取对应Segment的锁。</p>
-<ol start="8">
-<li><p><strong>ConcurrentHashMap和Hashtable</strong></p>
+<ol start="7">
+<li><strong>ConcurrentHashMap和Hashtable</strong></li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -996,34 +1009,28 @@
 <td>固定</td>
 </tr>
 </tbody></table>
-</li>
-<li><p><strong>HashMap</strong></p>
-</li>
+<ol start="8">
+<li><strong>HashMap</strong></li>
 </ol>
 <p><strong>HashMap底层实现</strong>：</p>
 <p>JDK1.8 之前 <code>HashMap</code> 底层是 <strong>数组和链表</strong> 结合在一起使用也就是 <strong>链表散列</strong>。HashMap 通过 key 的 <code>hashcode</code> 经过扰动函数处理过后得到 hash 值，然后通过 <code>(n - 1) &amp; hash</code> 判断当前元素存放的位置（这里的 n 指的是数组的长度），如果当前位置存在元素的话，就判断该元素与要存入的元素的 hash 值以及 key 是否相同，如果相同的话，直接覆盖，不相同就通过拉链法解决冲突。</p>
 <p>JDK1.8之后超过阈值会转化为红黑树</p>
 <p><strong>HahsMap迭代方式</strong>：</p>
-<ol>
-<li><p>迭代器（Iterator）方式遍历；</p>
-</li>
-<li><p>For Each 方式遍历；</p>
-</li>
-<li><p>Lambda 表达式遍历（JDK 1.8+）;</p>
-</li>
-<li><p>Streams API 遍历（JDK 1.8+）。</p>
-</li>
-<li><p><strong>HashSet查重复</strong></p>
-</li>
+<p>（1） 迭代器（Iterator）方式遍历；</p>
+<p>（2）For Each 方式遍历；</p>
+<p>（3）Lambda 表达式遍历（JDK 1.8+）;</p>
+<p>（4）Streams API 遍历（JDK 1.8+）。</p>
+<ol start="9">
+<li><strong>HashSet查重复</strong></li>
 </ol>
 <p>当你把对象加入<code>HashSet</code>时，<code>HashSet</code> 会先计算对象的<code>hashcode</code>值来判断对象加入的位置，同时也会与其他加入的对象的 <code>hashcode</code> 值作比较，如果没有相符的 <code>hashcode</code>，<code>HashSet</code> 会假设对象没有重复出现。但是如果发现有相同 <code>hashcode</code> 值的对象，这时会调用<code>equals()</code>方法来检查 <code>hashcode</code> 相等的对象是否真的相同。如果两者相同，<code>HashSet</code> 就不会让加入操作成功。</p>
-<h1 id="Java并发"><a href="#Java并发" class="headerlink" title="Java并发"></a>Java并发</h1><h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><ol start="7">
-<li>volatile关键字**</li>
+<h2 id="Java并发"><a href="#Java并发" class="headerlink" title="Java并发"></a>Java并发</h2><h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><ol>
+<li><strong>volatile关键字</strong></li>
 </ol>
 <p><code>volatile</code> 是 Java 中的一个关键字，用来修饰变量。在多线程并发编程中，<code>volatile</code> 关键字的作用是告诉 JVM：这个变量是不稳定的，每次读取它的值时都需要从内存中重新获取，而不能使用 CPU 缓存中的值，同时在写入变量值时，也要立即刷新到内存中，而不是在某个时刻之后才进行。</p>
 <p>使用 <code>volatile</code> 可以保证多线程并发访问该变量时的可见性和有序性，即任何线程对该变量的修改，都能立即反映到其他线程中。但是，<code>volatile</code> 并不能保证操作的原子性，因此不能完全替代 <code>synchronized</code>。</p>
 <p>另外，由于 <code>volatile</code> 强制变量从内存中读写，因此其性能会稍微慢一些。一般来说，只有在对变量的写入操作较少，而对读取操作较多的情况下，才适合使用 <code>volatile</code>。</p>
-<ol start="11">
+<ol start="2">
 <li><strong>synchronized</strong></li>
 </ol>
 <p><code>synchronized</code> 是 Java 中的一个关键字，翻译成中文是同步的意思，主要解决的是多个线程之间访问资源的同步性，可以保证被它修饰的方法或者代码块在任意时刻只能有一个线程执行。</p>
@@ -1033,8 +1040,8 @@
 <li>修饰静态方法：给当前类加锁，会作用于类的所有对象实例 ，进入同步代码前要获得 <strong>当前 class 的锁</strong></li>
 <li>修饰代码块： 表示进入同步代码库前要获得 <strong>给定对象的锁</strong>、表示进入同步代码前要获得 <strong>给定 Class 的锁</strong></li>
 </ul>
-<ol start="12">
-<li>ReentranLock和synchronized的区别</li>
+<ol start="3">
+<li><strong>ReentranLock和synchronized的区别</strong></li>
 </ol>
 <table>
 <thead>
@@ -1108,7 +1115,8 @@
 <p>不剥夺条件:线程已获得的资源在未使用完之前不能被其他线程强行剥夺，只有自己使用完毕后才释放资源。</p>
 <p>循环等待条件:若干线程之间形成一种头尾相接的循环等待资源关系。</p>
 <ol start="5">
-<li><p><strong>sleep()和wait()方法对比</strong></p>
+<li><strong>sleep()和wait()方法对比</strong></li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -1138,33 +1146,30 @@
 <td>object类方法</td>
 </tr>
 </tbody></table>
-</li>
-</ol>
 <!--wait设置在object是因为需要对象释放对象锁，sleep设置在thread是因为只是暂停不涉及对象-->
 
 <ol start="6">
 <li><strong>可以直接调用thread的run()吗？</strong></li>
 </ol>
 <p> 调用 <code>start()</code> 方法方可启动线程并使线程进入就绪状态，直接执行 <code>run()</code> 方法的话会把 <code>run()</code> 方法当成一个 main 线程下的普通方法去执行，并不会在某个线程中执行它，所以这并不是多线程工作。</p>
-<ol start="8">
+<ol start="7">
 <li><strong>乐观锁和悲观锁</strong></li>
 </ol>
 <p><strong>悲观锁</strong>：悲观锁总是假设最坏的情况，认为共享资源每次被访问的时候就会出现问题(比如共享数据被修改)，所以每次在获取资源操作的时候都会上锁，这样其他线程想拿到这个资源就会阻塞直到锁被上一个持有者释放。也就是说，<strong>共享资源每次只给一个线程使用，其它线程阻塞，用完后再把资源转让给其它线程</strong>。悲观锁通常多用于写比较多的情况下（多写场景，竞争激烈），这样可以避免频繁失败和重试影响性能，悲观锁的开销是固定的。</p>
 <p><strong>乐观锁</strong>：乐观锁总是假设最好的情况，认为共享资源每次被访问的时候不会出现问题，线程可以不停地执行，无需加锁也无需等待，只是在提交修改的时候去验证对应的资源（也就是数据）是否被其它线程修改了。乐观锁通常多于写比较少的情况下（多读场景，竞争较少），这样可以避免频繁加锁影响性能。不过，乐观锁主要针对的对象是单个共享变量。</p>
-<ol start="9">
+<ol start="8">
 <li><strong>乐观锁实现方式</strong></li>
 </ol>
 <p>版本号机制：一般是在数据表中加上一个数据版本号 <code>version</code> 字段，表示数据被修改的次数。当数据被修改时，<code>version</code> 值会加一。当线程 A 要更新数据值时，在读取数据的同时也会读取 <code>version</code> 值，在提交更新时，若刚才读取到的 version 值为当前数据库中的 <code>version</code> 值相等时才更新，否则重试更新操作，直到更新成功。</p>
 <p>CAS算法：涉及到三个操作数：<strong>V</strong> ：要更新的变量值(Var)   <strong>E</strong> ：预期值(Expected)   <strong>N</strong> ：拟写入的新值(New)。当且仅当 V 的值等于 E 时，CAS 通过原子方式用新值 N 来更新 V 的值。如果不等，说明已经有其它线程更新了 V，则当前线程放弃更新。</p>
-<ol start="10">
+<ol start="9">
 <li><strong>乐观锁的问题</strong></li>
 </ol>
 <ul>
 <li><p>ABA问题：如果一个变量 V 初次读取的时候是 A 值，并且在准备赋值的时候检查到它仍然是 A 值，可能在这段时间它的值可能被改为其他值，然后又改回 A，那 CAS 操作就会误认为它从来没有被修改过。这个问题被称为 CAS 操作的 <strong>“ABA”问题。</strong></p>
 <p>ABA 问题的解决思路是在变量前面追加上<strong>版本号或者时间戳</strong>。</p>
 </li>
-<li><p>循环时间开销大：CAS 经常会用到自旋操作来进行重试，也就是不成功就一直循环执行直到成功。如果长时间不成功，会给 CPU 带来非常大的执行开销。</p>
-<p>使用pause指令</p>
+<li><p>循环时间开销大：CAS 经常会用到自旋操作来进行重试，也就是不成功就一直循环执行直到成功。如果长时间不成功，会给 CPU 带来非常大的执行开销。使用pause指令</p>
 </li>
 <li><p>只能保证一个共享变量的原子操作</p>
 </li>
@@ -1173,8 +1178,8 @@
 <p><code>ThreadLocal</code> 的作用是在多线程环境中，为每个线程提供一个独立的变量副本，这样每个线程都可以独立地改变自己的变量副本，而不会影响其他线程。这种方式通常被用来实现线程安全的对象，例如日期格式化器和数据库连接等。</p>
 <p>具体来说，<code>ThreadLocal</code> 可以用来存储线程相关的数据，例如用户信息、Session、数据库连接等，这些数据在多线程环境下需要被共享，但是又不能被不同线程之间共享，否则会造成数据混乱。</p>
 <p>另外，<code>ThreadLocal</code> 的实现原理是在每个线程内部维护一个 <code>ThreadLocalMap</code> 类型的映射表，用于存储变量副本。当调用 <code>ThreadLocal</code> 的 <code>get()</code> 方法时，会根据当前线程获取对应的变量副本；当调用 <code>set()</code> 方法时，会将变量副本存储到当前线程的映射表中；当不再需要该变量时，需要调用 <code>ThreadLocal</code> 的 <code>remove()</code> 方法来删除该变量副本，避免内存泄漏。</p>
-<p>Thread类中包括<code>threadLocals</code> 和 一个 <code>inheritableThreadLocals</code> 变量，它们都是 <code>ThreadLocalMap</code> 类型的变量。<strong>最终的变量是放在了当前线程的 <code>ThreadLocalMap</code> 中，并不是存在 <code>ThreadLocal</code> 上，<code>ThreadLocal</code> 可以理解为只是<code>ThreadLocalMap</code>的封装，传递了变量值。</strong></p>
-<p><strong>每个<code>Thread</code>中都具备一个<code>ThreadLocalMap</code>，而<code>ThreadLocalMap</code>可以存储以<code>ThreadLocal</code>为 key ，Object 对象为 value 的键值对。</strong></p>
+<p>Thread类中包括<code>threadLocals</code> 和 一个 <code>inheritableThreadLocals</code> 变量，它们都是 <code>ThreadLocalMap</code> 类型的变量。最终的变量是放在了当前线程的 <code>ThreadLocalMap</code> 中，并不是存在 <code>ThreadLocal</code> 上，<code>ThreadLocal</code> 可以理解为只是<code>ThreadLocalMap</code>的封装，传递了变量值。</p>
+<p>每个<code>Thread</code>中都具备一个<code>ThreadLocalMap</code>，而<code>ThreadLocalMap</code>可以存储以<code>ThreadLocal</code>为 key ，Object 对象为 value 的键值对。</p>
 <ol>
 <li><strong>内存泄漏</strong></li>
 </ol>
@@ -1212,16 +1217,12 @@
 <li>拒绝策略</li>
 </ol>
 <ul>
-<li><p><strong><code>ThreadPoolExecutor.AbortPolicy</code>：</strong> <strong>抛出异常</strong>来拒绝新任务的处理。</p>
-</li>
-<li><p><strong><code>ThreadPoolExecutor.CallerRunsPolicy</code>：</strong> 调用执行自己的线程运行任务，也就是直接在调用<code>execute</code>方法的线程中运行(<code>run</code>)被拒绝的任务，如果执行程序已关闭，则会丢弃该任务</p>
-</li>
-<li><p><strong><code>ThreadPoolExecutor.DiscardOldestPolicy</code>：</strong> 此策略将<strong>丢弃最早的未处理的任务</strong>请求。</p>
-</li>
-<li><p><strong><code>ThreadPoolExecutor.DiscardPolicy</code>：</strong> 不处理新任务，<strong>直接丢弃</strong>掉。</p>
-</li>
+<li><strong><code>ThreadPoolExecutor.AbortPolicy</code>：</strong> <strong>抛出异常</strong>来拒绝新任务的处理。</li>
+<li><strong><code>ThreadPoolExecutor.CallerRunsPolicy</code>：</strong> 调用执行自己的线程运行任务，也就是直接在调用<code>execute</code>方法的线程中运行(<code>run</code>)被拒绝的任务，如果执行程序已关闭，则会丢弃该任务</li>
+<li><strong><code>ThreadPoolExecutor.DiscardOldestPolicy</code>：</strong> 此策略将<strong>丢弃最早的未处理的任务</strong>请求。</li>
+<li><strong><code>ThreadPoolExecutor.DiscardPolicy</code>：</strong> 不处理新任务，<strong>直接丢弃</strong>掉。</li>
 </ul>
-<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><ol>
+<h1 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h1><h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><ol>
 <li><strong>sql语句执行过程</strong></li>
 </ol>
 <p>语法解析——权限验证——查询缓存——查询优化器——执行计划生成——数据检索——数据排序分组——数据返回——事务处理</p>
@@ -1231,7 +1232,8 @@
 <p>MySQL的存储引擎架构是一个插件式的架构。</p>
 <p>包括组件：</p>
 <ol start="3">
-<li><p><strong>MyISAM和InnoDB</strong></p>
+<li><strong>MyISAM和InnoDB</strong></li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -1263,9 +1265,8 @@
 <td>自动崩溃恢复和恢复日志功能</td>
 </tr>
 </tbody></table>
-</li>
-<li><p><strong>char和varchar的区别</strong></p>
-</li>
+<ol start="4">
+<li><strong>char和varchar的区别</strong></li>
 </ol>
 <p><code>CHAR</code>和<code>VARCHAR</code>的区别在于，<code>CHAR</code>是固定长度的，如果存储的内容不足长度，则会补齐空格；<code>VARCHAR</code>是可变长度的，根据存储的内容动态分配空间，不会补齐空格。</p>
 <p>varchar有两字节记录长度，扩容时如果空间还够直接添加，否则要开辟新空间然后复制删除。</p>
@@ -1273,15 +1274,15 @@
 <li>建表考虑的问题</li>
 </ol>
 <p>数据库设计、数据类型、主键设计、索引设计、字段属性、数据库引擎、数据库安全、数据库备份与恢复</p>
-<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><ol start="4">
+<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><ol>
 <li><strong>事务</strong></li>
 </ol>
 <p>数据库事务（Transaction）是指一组数据库操作，这组操作被视为一个不可分割的工作单元，只有在所有操作都完成时，才会被提交到数据库中，否则会被回滚（Rollback）并撤销所有操作。</p>
-<ol start="5">
+<ol start="2">
 <li><strong>事务特点</strong></li>
 </ol>
 <p>原子性、一致性、隔离性、持久性</p>
-<ol start="6">
+<ol start="3">
 <li><strong>并发事务带来的问题</strong></li>
 </ol>
 <p>脏读（Dirty Read）：指一个事务读取了另一个事务未提交的数据。</p>
@@ -2509,6 +2510,39 @@
 
                 </div>
             </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title"></h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/zhifubao.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/weixin.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
             
         </div>
     </div>
