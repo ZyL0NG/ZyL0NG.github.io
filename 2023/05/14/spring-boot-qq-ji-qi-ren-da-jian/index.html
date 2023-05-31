@@ -8,7 +8,7 @@
                 i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/cd704ade.js","daovoice")</script>
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="个人代理搭建, 花溪悠悠の空間へようこそ">
+    <meta name="keywords" content="Spring Boot QQ机器人搭建, 花溪悠悠の空間へようこそ">
     <meta name="description" content="基于小火箭搭建一个自己的vpn，初衷是为了解决QQ不能异地登录的问题">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -21,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>个人代理搭建 | 花溪悠悠の空間へようこそ</title>
+    <title>Spring Boot QQ机器人搭建 | 花溪悠悠の空間へようこそ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -319,12 +319,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">个人代理搭建</h1>
+                    <h1 class="description center-align post-title">Spring Boot QQ机器人搭建</h1>
                 </div>
             </div>
         </div>
@@ -348,8 +348,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
@@ -360,8 +360,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
-                                随笔
+                            <a href="/categories/Program/" class="post-category">
+                                Program
                             </a>
                         
                     </div>
@@ -380,21 +380,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-20
+                    2023-05-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    293
+                    595
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -417,8 +417,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><p>选择一台ubuntu海外服务器</p>
-<h1 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h1><ol>
+                <h1 id="gocqhttp登录QQ"><a href="#gocqhttp登录QQ" class="headerlink" title="gocqhttp登录QQ"></a>gocqhttp登录QQ</h1><h2 id="个人代理搭建"><a href="#个人代理搭建" class="headerlink" title="个人代理搭建"></a>个人代理搭建</h2><p>要想在服务器端运行，涉及到QQ登录环境异常的问题，要用服务器当代理环境，手机才能扫码登陆，下面是手机挂VPN的方法，节点就是自己的服务器</p>
+<ol>
 <li>安装shadowsocks-libev服务端</li>
 </ol>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update
@@ -467,7 +467,7 @@
 //正常返回，如果结尾有-u则说明shadowsocks客户端启用了udp relay
 /usr/bin/ss-server <span class="token parameter variable">-c</span> /etc/shadowsocks-libev/config.json <span class="token parameter variable">-u</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h1><ol>
+<h3 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h3><ol>
 <li>安装Shadowsocks</li>
 <li>配置文件——手动配置</li>
 </ol>
@@ -483,9 +483,70 @@
 //插件
 udp设置：如果ss-server状态不带-u 一定要设置为禁用<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://fanqiang.software-download.name/ebook/03.2.html">https://fanqiang.software-download.name/ebook/03.2.html</a></p>
+<h1 id="监听端口与转发"><a href="#监听端口与转发" class="headerlink" title="监听端口与转发"></a>监听端口与转发</h1><h1 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h1><ol>
+<li>本地配置</li>
+</ol>
+<p>pom文件：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//父项目pom文件</span>
+    <span class="token generics"><span class="token punctuation">&lt;</span>build<span class="token punctuation">></span></span>
+        <span class="token generics"><span class="token punctuation">&lt;</span>plugins<span class="token punctuation">></span></span>
+            <span class="token generics"><span class="token punctuation">&lt;</span>plugin<span class="token punctuation">></span></span>
+                <span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">></span></span>org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>maven<span class="token punctuation">.</span>plugins<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+                <span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">></span></span>maven<span class="token operator">-</span>compiler<span class="token operator">-</span>plugin<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+                <span class="token generics"><span class="token punctuation">&lt;</span>configuration<span class="token punctuation">></span></span>
+                    <span class="token generics"><span class="token punctuation">&lt;</span>source<span class="token punctuation">></span></span><span class="token number">1.8</span><span class="token operator">&lt;</span><span class="token operator">/</span>source<span class="token operator">></span>
+                    <span class="token generics"><span class="token punctuation">&lt;</span>target<span class="token punctuation">></span></span><span class="token number">1.8</span><span class="token operator">&lt;</span><span class="token operator">/</span>target<span class="token operator">></span>
+                    <span class="token generics"><span class="token punctuation">&lt;</span>encoding<span class="token punctuation">></span></span><span class="token constant">UTF</span><span class="token operator">-</span><span class="token number">8</span><span class="token operator">&lt;</span><span class="token operator">/</span>encoding<span class="token operator">></span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>configuration<span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>plugin<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>plugins<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>build<span class="token operator">></span>
+
+<span class="token comment">//子项目pom文件</span>
+	<span class="token generics"><span class="token punctuation">&lt;</span>build<span class="token punctuation">></span></span>
+        <span class="token generics"><span class="token punctuation">&lt;</span>plugins<span class="token punctuation">></span></span>
+            <span class="token generics"><span class="token punctuation">&lt;</span>plugin<span class="token punctuation">></span></span>
+                <span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">></span></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+                <span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">></span></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>maven<span class="token operator">-</span>plugin<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+                <span class="token generics"><span class="token punctuation">&lt;</span>version<span class="token punctuation">></span></span><span class="token number">2.6</span><span class="token number">.13</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+                <span class="token generics"><span class="token punctuation">&lt;</span>configuration<span class="token punctuation">></span></span>
+                    <span class="token generics"><span class="token punctuation">&lt;</span>fork<span class="token punctuation">></span></span><span class="token boolean">true</span><span class="token operator">&lt;</span><span class="token operator">/</span>fork<span class="token operator">></span>
+                    <span class="token generics"><span class="token punctuation">&lt;</span>finalName<span class="token punctuation">></span></span>$<span class="token punctuation">&#123;</span>project<span class="token punctuation">.</span>build<span class="token punctuation">.</span>finalName<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>finalName<span class="token operator">></span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>configuration<span class="token operator">></span>
+                <span class="token generics"><span class="token punctuation">&lt;</span>executions<span class="token punctuation">></span></span>
+                    <span class="token generics"><span class="token punctuation">&lt;</span>execution<span class="token punctuation">></span></span>
+                        <span class="token generics"><span class="token punctuation">&lt;</span>id<span class="token punctuation">></span></span>repackage<span class="token operator">&lt;</span><span class="token operator">/</span>id<span class="token operator">></span>
+                        <span class="token generics"><span class="token punctuation">&lt;</span>goals<span class="token punctuation">></span></span>
+                            <span class="token generics"><span class="token punctuation">&lt;</span>goal<span class="token punctuation">></span></span>repackage<span class="token operator">&lt;</span><span class="token operator">/</span>goal<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>可以把依赖的包都打包到生成的<span class="token class-name">Jar</span>包中<span class="token operator">--</span><span class="token operator">></span>
+                        <span class="token operator">&lt;</span><span class="token operator">/</span>goals<span class="token operator">></span>
+                    <span class="token operator">&lt;</span><span class="token operator">/</span>execution<span class="token operator">></span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>executions<span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>plugin<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>plugins<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>build<span class="token operator">></span>
+       <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>maven项目打包并上传至服务器</p>
+<ol start="2">
+<li>服务器</li>
+</ol>
+<p>编写dockerfile文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> filename
+
+FROM openjdk:8
+MAINTAINER HXYY 		//签名
+ADD jar包名 别名.jar
+CMD <span class="token function">java</span> <span class="token parameter variable">-jar</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行dockerfile文件构建镜像</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> build <span class="token parameter variable">-f</span> ./dockerfile <span class="token parameter variable">-t</span> 镜像名 <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>搭建容器</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-id</span> <span class="token parameter variable">--name</span> 容器名 <span class="token parameter variable">-p</span> 宿主机端口:docker端口 镜像文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://fanqiang.software-download.name/ebook/03.2.html">https://fanqiang.software-download.name/ebook/03.2.html</a></p>
+
 
                 
             </div>
@@ -500,8 +561,8 @@ udp设置：如果ss-server状态不带-u 一定要设置为禁用<span aria-hid
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
                         </div>
@@ -530,7 +591,7 @@ udp设置：如果ss-server状态不带-u 一定要设置为禁用<span aria-hid
     <div id="rewardModal" class="modal">
         <div class="modal-content">
             <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title"></h4>
+            <h4 class="reward-title">谢谢你请我喝奶茶</h4>
             <div class="reward-content">
                 <div class="reward-tabs">
                     <ul class="tabs row">
@@ -541,7 +602,7 @@ udp设置：如果ss-server状态不带-u 一定要设置为禁用<span aria-hid
                         <img src="/medias/reward/zhifubao.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/weixin.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/weixin.jpg" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
