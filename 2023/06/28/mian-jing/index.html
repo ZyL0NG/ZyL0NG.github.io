@@ -8,8 +8,17 @@
                 i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/cd704ade.js","daovoice")</script>
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Online Edu, 花溪悠悠の空間へようこそ">
-    <meta name="description" content="尚硅谷的谷粒学院项目的完善改进">
+    <meta name="keywords" content="面经, 花溪悠悠の空間へようこそ">
+    <meta name="description" content="随身云
+redis: zset底层结构（跳表）、实现分布式锁
+
+可重入锁怎么判断是不是同一线程获取的（线程id）
+
+mysql的B树B+树区别，
+
+主键索引和非主键索引的B+树结构区别（主键包含一整行数据，非主键只有索引和主键列）
+
+排行榜">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +30,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Online Edu | 花溪悠悠の空間へようこそ</title>
+    <title>面经 | 花溪悠悠の空間へようこそ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -319,12 +328,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Online Edu</h1>
+                    <h1 class="description center-align post-title">面经</h1>
                 </div>
             </div>
         </div>
@@ -346,25 +355,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Program/" class="post-category">
-                                Program
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -373,28 +369,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-04-26
+                    2023-06-28
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-20
+                    2023-07-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    930
+                    336
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -417,95 +413,43 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="课程"><a href="#课程" class="headerlink" title="课程"></a>课程</h1><h2 id="课程添加"><a href="#课程添加" class="headerlink" title="课程添加"></a>课程添加</h2><ol>
-<li>EasyExcel为什么快？</li>
-</ol>
-<p>采用基于模型的方式读写 Excel 文件，避免了大量的硬盘 I&#x2F;O 操作，减少了读写 Excel 文件的时间和资源消耗。</p>
-<p>使用了基于 NIO 的读写方式，可以利用 Java NIO 的零拷贝特性，避免了数据拷贝和内存分配等操作，减少了 CPU 和内存的开销。</p>
-<p>使用了多线程并发读写技术，可以将 Excel 文件划分为多个块，每个块独立处理，提高了读写效率和吞吐量。</p>
-<p>针对大数据量的 Excel 文件，EasyExcel 还采用了缓存技术和对象复用技术，避免了大量的对象创建和销毁，提高了系统的性能和稳定性。</p>
-<h2 id="课程分类（树形结构）"><a href="#课程分类（树形结构）" class="headerlink" title="课程分类（树形结构）"></a>课程分类（树形结构）</h2><ol>
-<li>创建实体类：一级分类（包含二级分类的集合）、二级分类</li>
-<li>查询一级分类、二级分类（parent_id&#x3D;&#x3D;0）</li>
-<li>wapper查询放入一级分类</li>
-<li>（parentid&#x3D;&#x3D;id）放入二级分类</li>
-</ol>
-<h1 id="讲师"><a href="#讲师" class="headerlink" title="讲师"></a>讲师</h1><h2 id="讲师管理头像上传"><a href="#讲师管理头像上传" class="headerlink" title="讲师管理头像上传"></a>讲师管理头像上传</h2><ol>
-<li>上传文件到oss返回url</li>
-<li>获取地域节点、accesskey等</li>
-<li>文件输入流上传</li>
-<li>返回url</li>
-</ol>
-<blockquote>
-<p>重名问题：uuid</p>
-<p>按日期分类</p>
-</blockquote>
-<h1 id="单点登录"><a href="#单点登录" class="headerlink" title="单点登录"></a>单点登录</h1><h2 id="三种方式"><a href="#三种方式" class="headerlink" title="三种方式"></a>三种方式</h2><ol>
-<li><p>session广播机制</p>
+                <h1 id="随身云"><a href="#随身云" class="headerlink" title="随身云"></a>随身云</h1><ol>
+<li><p>redis: zset底层结构（跳表）、实现分布式锁</p>
 </li>
-<li><p>cookie+redis</p>
+<li><p>可重入锁怎么判断是不是同一线程获取的（线程id）</p>
+</li>
+<li><p>mysql的B树B+树区别，</p>
+</li>
+<li><p>主键索引和非主键索引的B+树结构区别（主键包含一整行数据，非主键只有索引和主键列）</p>
+</li>
+<li><p>排行榜有相同的分数怎么区分前后</p>
+</li>
+<li><p>线程池参数</p>
+</li>
+<li><p>JWT：包含三部分：jwt头信息、有效载荷（用户信息）、签名哈希</p>
+</li>
+</ol>
+<p>优点：跨语言支持、便于传输（体积小）、易于扩展（不在服务端保存会话信息）</p>
+<p>缺点：令牌泄露风险、无法动态更新、无法撤销</p>
+<p>解决方法：设置短期有效，设置黑名单记录撤销令牌，使用refresh token刷新重新生成一个accesstoken</p>
+<ol start="8">
+<li>单点登录</li>
+</ol>
+<p>session广播机制</p>
+<p>cookie+redis</p>
 <p>任意模块登陆后，</p>
 <blockquote>
 <p>redis：    key：生成唯一值，value：用户数据</p>
 <p>cookie： redis中的key</p>
 </blockquote>
 <p>访问其他模块发送请求呆着cookie发送，cookie中获取值，在redis查询</p>
-</li>
-<li><p>token（令牌）</p>
+<p>token（令牌）</p>
 <p>任意模块登陆后，规则生成字符串包含用户信息，返回字符串</p>
 <blockquote>
 <p>通过cookie返回</p>
 <p>通过地址栏返回</p>
 </blockquote>
 <p>访问其他模块，地址栏带着字符串，模块到地址栏取字符串，根据字符串获取用户信息</p>
-</li>
-</ol>
-<h3 id="JWT规则"><a href="#JWT规则" class="headerlink" title="JWT规则"></a>JWT规则</h3><p>包含三部分：jwt头信息、有效载荷（用户信息）、签名哈希</p>
-<h2 id="登陆流程"><a href="#登陆流程" class="headerlink" title="登陆流程"></a>登陆流程</h2><ol>
-<li>手机号和密码非空</li>
-<li>手机号查数据库有记录找出相应用户对象，且密码（经过加密后与数据库记录一样）正确、用户未被禁用</li>
-<li>jwt生成token并返回</li>
-</ol>
-<h2 id="token获取用户信息"><a href="#token获取用户信息" class="headerlink" title="token获取用户信息"></a>token获取用户信息</h2><ol>
-<li>jwt工具获取用户id</li>
-<li>根据id查询数据库获取信息</li>
-</ol>
-<h1 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h1><h3 id="注册流程"><a href="#注册流程" class="headerlink" title="注册流程"></a>注册流程</h3><ol>
-<li>值都不空</li>
-<li>redis存储邮箱号和验证吗</li>
-<li>判断输入验证码和与redis中验证码是否一致</li>
-<li>查询邮箱号是否被注册</li>
-<li>数据库添加用户（密码加密）</li>
-</ol>
-<h1 id="统计分析模块"><a href="#统计分析模块" class="headerlink" title="统计分析模块"></a>统计分析模块</h1><h1 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h1><h1 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h1><p>批量删除：json对应list，调用removeall</p>
-<h1 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h1><h2 id="菜单权限"><a href="#菜单权限" class="headerlink" title="菜单权限"></a>菜单权限</h2><h2 id="按钮权限"><a href="#按钮权限" class="headerlink" title="按钮权限"></a>按钮权限</h2><h1 id="遇到问题"><a href="#遇到问题" class="headerlink" title="遇到问题"></a>遇到问题</h1><ol>
-<li>跨域问题</li>
-</ol>
-<p>协议、ip地址、端口有不同资源文法访问</p>
-<p>使用crossorigin注解</p>
-<p>gateway网关</p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h1 id="从MySQL向redis添加数据"><a href="#从MySQL向redis添加数据" class="headerlink" title="从MySQL向redis添加数据"></a>从MySQL向redis添加数据</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span>v<span class="token punctuation">,</span>score<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>k是zset的名字，v是值，score是得分</p>
-<blockquote>
-<p> 可以把k理解为zset的名字，v是这个zset的key，score是对应的value</p>
-</blockquote>
-<h1 id="改变value的score"><a href="#改变value的score" class="headerlink" title="改变value的score"></a>改变value的score</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">incrementScore</span><span class="token punctuation">(</span>zset_name<span class="token punctuation">,</span> value<span class="token punctuation">,</span> score<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>第一个参数是zset的名字，第二个参数是对应的value的值，第三个参数是score的增量</p>
-<h1 id="获得排名"><a href="#获得排名" class="headerlink" title="获得排名"></a>获得排名</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ZSetOperations<span class="token punctuation">.</span>TypedTuple</span><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span><span class="token punctuation">></span></span> set <span class="token operator">=</span> 																		redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rangeWithScores</span><span class="token punctuation">(</span>zset_name<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">ZSetOperations<span class="token punctuation">.</span>TypedTuple</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> tuple <span class="token operator">:</span> set<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"value:"</span> <span class="token operator">+</span> tuple<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">", score:"</span> <span class="token operator">+</span> tuple<span class="token punctuation">.</span><span class="token function">getScore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>set集合用来存放键值对结果，<code>redisTemplate.opsForZSet().rangeWithScores</code>获取排序结果（默认升序），第一个参数为zset的名字，第二个参数表示从第几名开始获取，第三个参数表示到第几名结束（（0，-1）表示获取全部value）</p>
-<h1 id="Zset并集"><a href="#Zset并集" class="headerlink" title="Zset并集"></a>Zset并集</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unionAndStore</span><span class="token punctuation">(</span> zset_name01<span class="token punctuation">,</span>zset_name02<span class="token punctuation">,</span>zset_name03<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>将zset_name02合并到zset_name01,相同元素相加，其余添加</p>
-<h1 id="删除Zset"><a href="#删除Zset" class="headerlink" title="删除Zset"></a>删除Zset</h1><pre class="line-numbers language-java" data-language="java"><code class="language-java">redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">removeRange</span><span class="token punctuation">(</span>zset_name<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>删除zset_name的value，第二、三参数表示从第几位删除到第几位，((0,-1))表示全部删除</p>
 
                 
             </div>
@@ -519,11 +463,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -923,49 +863,39 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/05/05/she-ji-mo-shi/">
+                <a href="/2023/06/28/mian-jing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="设计模式">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="面经">
                         
-                        <span class="card-title">设计模式</span>
+                        <span class="card-title">面经</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            还在慢慢补充，种类太多了...
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-28
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-category">
-                                    后端开发
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            花溪悠悠
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -976,31 +906,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/04/14/mian-shi-ti/">
+                <a href="/2023/05/22/leetcode/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Java八股文">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="LeetCode">
                         
-                        <span class="card-title">Java八股文</span>
+                        <span class="card-title">LeetCode</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            关于Java面试常见的一些问题，还在收录中
+                            力扣的刷题记录
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/%E5%8A%9B%E6%89%A3/" class="post-category">
+                                    力扣
                                 </a>
                             
                             
@@ -1010,8 +940,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E5%8A%9B%E6%89%A3/">
+                        <span class="chip bg-color">力扣</span>
                     </a>
                     
                 </div>
