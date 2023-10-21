@@ -8,17 +8,12 @@
                 i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/cd704ade.js","daovoice")</script>
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="面经, 花溪悠悠の空間へようこそ">
-    <meta name="description" content="随身云
-redis: zset底层结构（跳表）、实现分布式锁
-
-可重入锁怎么判断是不是同一线程获取的（线程id）
-
-mysql的B树B+树区别，
-
-主键索引和非主键索引的B+树结构区别（主键包含一整行数据，非主键只有索引和主键列）
-
-排行榜">
+    <meta name="keywords" content="QQBot, 花溪悠悠の空間へようこそ">
+    <meta name="description" content="数据库&amp;#x2F;&amp;#x2F;创建数据库
+CREATE DATABASE qqbot;
+&amp;#x2F;&amp;#x2F; 创建用户表
+CREATE TABLE user (
+    id INT AUTO_INCREMENT PRIMARY KEY">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -30,7 +25,7 @@ mysql的B树B+树区别，
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>面经 | 花溪悠悠の空間へようこそ</title>
+    <title>QQBot | 花溪悠悠の空間へようこそ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -328,12 +323,12 @@ mysql的B树B+树区别，
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">面经</h1>
+                    <h1 class="description center-align post-title">QQBot</h1>
                 </div>
             </div>
         </div>
@@ -355,12 +350,25 @@ mysql的B树B+树区别，
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/program/" class="post-category">
+                                program
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -369,21 +377,21 @@ mysql的B树B+树区别，
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-06-28
+                    2023-07-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-12
+                    2023-07-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    371
+                    69
                 </div>
                 
 
@@ -413,49 +421,23 @@ mysql的B树B+树区别，
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="随身云"><a href="#随身云" class="headerlink" title="随身云"></a>随身云</h1><ol>
-<li><p>redis: zset底层结构（跳表）、实现分布式锁</p>
-</li>
-<li><p>可重入锁怎么判断是不是同一线程获取的（线程id）</p>
-</li>
-<li><p>mysql的B树B+树区别，</p>
-</li>
-<li><p>主键索引和非主键索引的B+树结构区别（主键包含一整行数据，非主键只有索引和主键列）</p>
-</li>
-<li><p>排行榜有相同的分数怎么区分前后</p>
-</li>
-<li><p>线程池参数</p>
-</li>
-<li><p>JWT：包含三部分：jwt头信息、有效载荷（用户信息）、签名哈希</p>
-</li>
-</ol>
-<p>优点：跨语言支持、便于传输（体积小）、易于扩展（不在服务端保存会话信息）</p>
-<p>缺点：令牌泄露风险、无法动态更新、无法撤销</p>
-<p>解决方法：设置短期有效，设置黑名单记录撤销令牌，使用refresh token刷新重新生成一个accesstoken</p>
-<ol start="8">
-<li>单点登录</li>
-</ol>
-<p>session广播机制</p>
-<p>cookie+redis</p>
-<p>任意模块登陆后，</p>
-<blockquote>
-<p>redis：    key：生成唯一值，value：用户数据</p>
-<p>cookie： redis中的key</p>
-</blockquote>
-<p>访问其他模块发送请求呆着cookie发送，cookie中获取值，在redis查询</p>
-<p>token（令牌）</p>
-<p>任意模块登陆后，规则生成字符串包含用户信息，返回字符串</p>
-<blockquote>
-<p>通过cookie返回</p>
-<p>通过地址栏返回</p>
-</blockquote>
-<p>访问其他模块，地址栏带着字符串，模块到地址栏取字符串，根据字符串获取用户信息</p>
-<h1 id="上证所信息网络有限公司"><a href="#上证所信息网络有限公司" class="headerlink" title="上证所信息网络有限公司"></a>上证所信息网络有限公司</h1><ol>
-<li>协议的作用</li>
-<li>本机IP、localhost、127.0.0.1的区别</li>
-<li>docker的好处</li>
-<li>redis的作用</li>
-</ol>
+                <h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">&#x2F;&#x2F;创建数据库
+CREATE DATABASE qqbot;
+&#x2F;&#x2F; 创建用户表
+CREATE TABLE user (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    qqid VARCHAR(20) NOT NULL,
+    sum_mes INT NOT NULL
+);
+&#x2F;&#x2F;创建普通消息表
+create table mes_common(
+    id int auto_increment primary key ,
+    qqid varchar(20) not null,
+    mes_check varchar(50),
+    mes_response varchar(50),
+    created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -469,7 +451,11 @@ mysql的B树B+树区别，
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -873,13 +859,13 @@ mysql的B树B+树区别，
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/07/23/qqbot/">
+                <a href="/2023/10/19/autoinput/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="QQBot">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="AutoInput">
                         
-                        <span class="card-title">QQBot</span>
+                        <span class="card-title">AutoInput</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -890,7 +876,7 @@ mysql的B树B+树区别，
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-23
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-19
                         </span>
                         <span class="publish-author">
                             
@@ -905,14 +891,6 @@ mysql的B树B+树区别，
                     </div>
                 </div>
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                </div>
-                
             </div>
         </div>
         
@@ -922,44 +900,32 @@ mysql的B树B+树区别，
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/22/leetcode/">
+                <a href="/2023/06/28/mian-jing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="LeetCode">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="面经">
                         
-                        <span class="card-title">LeetCode</span>
+                        <span class="card-title">面经</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            力扣的刷题记录
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-28
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%8A%9B%E6%89%A3/" class="post-category">
-                                    力扣
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            花溪悠悠
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%8A%9B%E6%89%A3/">
-                        <span class="chip bg-color">力扣</span>
-                    </a>
-                    
                 </div>
                 
             </div>

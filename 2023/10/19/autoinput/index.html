@@ -8,17 +8,9 @@
                 i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/cd704ade.js","daovoice")</script>
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="面经, 花溪悠悠の空間へようこそ">
-    <meta name="description" content="随身云
-redis: zset底层结构（跳表）、实现分布式锁
-
-可重入锁怎么判断是不是同一线程获取的（线程id）
-
-mysql的B树B+树区别，
-
-主键索引和非主键索引的B+树结构区别（主键包含一整行数据，非主键只有索引和主键列）
-
-排行榜">
+    <meta name="keywords" content="AutoInput, 花溪悠悠の空間へようこそ">
+    <meta name="description" content="双击填写输入框应用场景本人在实习期间，测试一些接口的功能是否正常，发现好多页面过于繁琐，必填项过多，很浪费事件，很多人习惯输入’1111’等简单字符，但是这样又造成大批量数据不容易区分，因此想到了使用鼠标双击随机产生一个字符串。
+代码段监听">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -30,7 +22,7 @@ mysql的B树B+树区别，
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>面经 | 花溪悠悠の空間へようこそ</title>
+    <title>AutoInput | 花溪悠悠の空間へようこそ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -328,12 +320,12 @@ mysql的B树B+树区别，
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">面经</h1>
+                    <h1 class="description center-align post-title">AutoInput</h1>
                 </div>
             </div>
         </div>
@@ -362,6 +354,15 @@ mysql的B树B+树区别，
                 </div>
                 <div class="col s5 right-align">
                     
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/program/" class="post-category">
+                                program
+                            </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
 
@@ -369,21 +370,21 @@ mysql的B树B+树区别，
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-06-28
+                    2023-10-19
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-12
+                    2023-10-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    371
+                    306
                 </div>
                 
 
@@ -413,49 +414,43 @@ mysql的B树B+树区别，
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="随身云"><a href="#随身云" class="headerlink" title="随身云"></a>随身云</h1><ol>
-<li><p>redis: zset底层结构（跳表）、实现分布式锁</p>
-</li>
-<li><p>可重入锁怎么判断是不是同一线程获取的（线程id）</p>
-</li>
-<li><p>mysql的B树B+树区别，</p>
-</li>
-<li><p>主键索引和非主键索引的B+树结构区别（主键包含一整行数据，非主键只有索引和主键列）</p>
-</li>
-<li><p>排行榜有相同的分数怎么区分前后</p>
-</li>
-<li><p>线程池参数</p>
-</li>
-<li><p>JWT：包含三部分：jwt头信息、有效载荷（用户信息）、签名哈希</p>
-</li>
-</ol>
-<p>优点：跨语言支持、便于传输（体积小）、易于扩展（不在服务端保存会话信息）</p>
-<p>缺点：令牌泄露风险、无法动态更新、无法撤销</p>
-<p>解决方法：设置短期有效，设置黑名单记录撤销令牌，使用refresh token刷新重新生成一个accesstoken</p>
-<ol start="8">
-<li>单点登录</li>
-</ol>
-<p>session广播机制</p>
-<p>cookie+redis</p>
-<p>任意模块登陆后，</p>
-<blockquote>
-<p>redis：    key：生成唯一值，value：用户数据</p>
-<p>cookie： redis中的key</p>
-</blockquote>
-<p>访问其他模块发送请求呆着cookie发送，cookie中获取值，在redis查询</p>
-<p>token（令牌）</p>
-<p>任意模块登陆后，规则生成字符串包含用户信息，返回字符串</p>
-<blockquote>
-<p>通过cookie返回</p>
-<p>通过地址栏返回</p>
-</blockquote>
-<p>访问其他模块，地址栏带着字符串，模块到地址栏取字符串，根据字符串获取用户信息</p>
-<h1 id="上证所信息网络有限公司"><a href="#上证所信息网络有限公司" class="headerlink" title="上证所信息网络有限公司"></a>上证所信息网络有限公司</h1><ol>
-<li>协议的作用</li>
-<li>本机IP、localhost、127.0.0.1的区别</li>
-<li>docker的好处</li>
-<li>redis的作用</li>
-</ol>
+                <h1 id="双击填写输入框"><a href="#双击填写输入框" class="headerlink" title="双击填写输入框"></a>双击填写输入框</h1><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>本人在实习期间，测试一些接口的功能是否正常，发现好多页面过于繁琐，必填项过多，很浪费事件，很多人习惯输入’1111’等简单字符，但是这样又造成大批量数据不容易区分，因此想到了使用鼠标双击随机产生一个字符串。</p>
+<h2 id="代码段"><a href="#代码段" class="headerlink" title="代码段"></a>代码段</h2><h3 id="监听鼠标操作"><a href="#监听鼠标操作" class="headerlink" title="监听鼠标操作"></a>监听鼠标操作</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">with</span> Listener<span class="token punctuation">(</span>on_click<span class="token operator">=</span>on_click<span class="token punctuation">)</span> <span class="token keyword">as</span> listener<span class="token punctuation">:</span>
+    listener<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="鼠标行为"><a href="#鼠标行为" class="headerlink" title="鼠标行为"></a>鼠标行为</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">on_click</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> button<span class="token punctuation">,</span> pressed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> click_times<span class="token punctuation">,</span> clipboard_text
+    
+    <span class="token keyword">if</span> button <span class="token operator">==</span> Button<span class="token punctuation">.</span>left <span class="token keyword">and</span> pressed<span class="token punctuation">:</span>
+        current_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        click_times<span class="token punctuation">.</span>append<span class="token punctuation">(</span>current_time<span class="token punctuation">)</span>
+        
+        <span class="token comment"># 移除超过时间阈值的点击时间</span>
+        click_times <span class="token operator">=</span> <span class="token punctuation">[</span>t <span class="token keyword">for</span> t <span class="token keyword">in</span> click_times <span class="token keyword">if</span> current_time <span class="token operator">-</span> t <span class="token operator">&lt;=</span> double_click_threshold<span class="token punctuation">]</span>
+        
+        <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>click_times<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span>
+            generate_random_str<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="随机字符生成"><a href="#随机字符生成" class="headerlink" title="随机字符生成"></a>随机字符生成</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">generate_random_str</span><span class="token punctuation">(</span>method<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> method<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span>
+    <span class="token comment"># 生成汉字</span>
+    <span class="token comment"># 选择汉字的Unicode范围（常用汉字范围）</span>
+        start <span class="token operator">=</span> <span class="token number">0x4e00</span>
+        end <span class="token operator">=</span> <span class="token number">0x9fa5</span>
+        random_chars <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">chr</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span>start<span class="token punctuation">,</span> end<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        random_chars_str <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>random_chars<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token comment"># 生成随机整数</span>
+        random_number <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">20000</span><span class="token punctuation">,</span><span class="token number">99999</span><span class="token punctuation">)</span>
+        <span class="token comment"># 将随机数转换为字符串</span>
+        random_chars_str<span class="token operator">=</span><span class="token builtin">str</span><span class="token punctuation">(</span>random_number<span class="token punctuation">)</span>
+
+    <span class="token comment">#CV操作</span>
+    pyperclip<span class="token punctuation">.</span>copy<span class="token punctuation">(</span>random_chars_str<span class="token punctuation">)</span> 
+    clipboard_text <span class="token operator">=</span> pyperclip<span class="token punctuation">.</span>paste<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    pyautogui<span class="token punctuation">.</span>hotkey<span class="token punctuation">(</span><span class="token string">'ctrl'</span><span class="token punctuation">,</span> <span class="token string">'v'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里提供了两种模式：一种生成三个随机字，另一种生成一个五位数字，这是因为数据库中某些字段只能存放数字</p>
 
                 
             </div>
@@ -869,9 +864,52 @@ mysql的B树B+树区别，
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/10/19/autoinput/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="AutoInput">
+                        
+                        <span class="card-title">AutoInput</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/program/" class="post-category">
+                                    program
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2023/07/23/qqbot/">
                     <div class="card-image">
@@ -889,9 +927,9 @@ mysql的B树B+树区别，
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -909,55 +947,6 @@ mysql的B树B+树区别，
                     
                     <a href="/tags/Java/">
                         <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/05/22/leetcode/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="LeetCode">
-                        
-                        <span class="card-title">LeetCode</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            力扣的刷题记录
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-22
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%8A%9B%E6%89%A3/" class="post-category">
-                                    力扣
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%8A%9B%E6%89%A3/">
-                        <span class="chip bg-color">力扣</span>
                     </a>
                     
                 </div>

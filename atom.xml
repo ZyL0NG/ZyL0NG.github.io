@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-07-08T03:27:07.444Z</updated>
+  <updated>2023-10-19T13:00:04.485Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,59 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>AutoInput</title>
+    <link href="http://example.com/2023/10/19/autoinput/"/>
+    <id>http://example.com/2023/10/19/autoinput/</id>
+    <published>2023-10-19T12:58:57.000Z</published>
+    <updated>2023-10-19T13:00:04.485Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;双击填写输入框&quot;&gt;&lt;a href=&quot;#双击填写输入框&quot; class=&quot;headerlink&quot; title=&quot;双击填写输入框&quot;&gt;&lt;/a&gt;双击填写输入框&lt;/h1&gt;&lt;h2 id=&quot;应用场景&quot;&gt;&lt;a href=&quot;#应用场景&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="program" scheme="http://example.com/categories/program/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>QQBot</title>
+    <link href="http://example.com/2023/07/23/qqbot/"/>
+    <id>http://example.com/2023/07/23/qqbot/</id>
+    <published>2023-07-23T07:54:20.000Z</published>
+    <updated>2023-07-23T07:59:41.418Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;数据库&quot;&gt;&lt;a href=&quot;#数据库&quot; class=&quot;headerlink&quot; title=&quot;数据库&quot;&gt;&lt;/a&gt;数据库&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-mysql&quot; data-language=&quot;mysql&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="program" scheme="http://example.com/categories/program/"/>
+    
+    
+    <category term="Java" scheme="http://example.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>面经</title>
     <link href="http://example.com/2023/06/28/mian-jing/"/>
     <id>http://example.com/2023/06/28/mian-jing/</id>
     <published>2023-06-28T08:41:16.000Z</published>
-    <updated>2023-07-08T03:27:07.444Z</updated>
+    <updated>2023-07-12T11:02:54.710Z</updated>
     
     
       
